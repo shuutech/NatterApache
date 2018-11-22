@@ -1,0 +1,38 @@
+/*SYNTAX EXAMPLE
+    selector(
+        property:value;
+        property.value;
+        )
+        .classname{
+        }
+        else
+        #id {
+        }
+        element {
+        }
+*/
+
+h1{
+font-size:44pt;
+}
+
+.bio {
+background-color: pink;
+text-align: center;
+font-size: 28pt;
+font-family: Brush Script MT;
+border: 1px solid black;
+border-radius: 28px;
+padding: 35px;
+
+
+}
+
+.room{
+margin: 40px;
+}
+
+.bio:hover {
+background-color: red;
+color: white;
+}
