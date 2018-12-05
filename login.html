@@ -3,12 +3,40 @@
         <title>
             Natter Login
         </title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
-<form class="room" action="login" method="post" >
-    UserName <input type ="text" name="username"/>
-    Password <input type ="password" name="password"/>
-    <input type ="submit"  name="submit" />
-    </body>
+	<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="login.html">Login</a>
+  <a href="create.html">Create User</a>
+  <a href="viewfriend.html">View Friends</a>
+  <a href="addfriend.html">Add Friend</a>
+   <a href="viewactivity.html">View Activity</a>
+   <a href="addactivity.html">Start Activity</a>
+</div>
+<div class="jumbotron text-center">
+  <h1 id="heading">Natter Login</h1>
+</div>
+<div class="container">
+  <form class="form-inline" method="post" action="home.html">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter username" name="username">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</body>
 </html>

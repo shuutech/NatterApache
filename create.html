@@ -3,18 +3,84 @@
         <title>
             Create User
         </title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
     </head>
 
     <body>
-<form class="room" action="create" method="post" >
-    UserName <input type ="text" name="username"/></br>
-    Password <input type ="password" name="password"/></br>
-    FirstName <input type ="text" name="firstName"/></br>
-    LastName <input type ="text" name="lastName"/></br>
-    Phone Number <input type ="text" name="phone"/></br>
-    Email Address <input type ="email" name="email"/></br>
-    Location <input type ="text" name="location"/></br>
-    
-    <input type ="submit"  name="submit" />
+	<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="login.html">Login</a>
+  <a href="create.html">Create User</a>
+  <a href="viewfriend.html">View Friends</a>
+  <a href="addfriend.html">Add Friend</a>
+   <a href="viewactivity.html">View Activity</a>
+   <a href="addactivity.html">Start Activity</a>
+</div>
+<div class="jumbotron text-center">
+  <h1 id="heading">Join Natter</h1>
+</div>
+<div id="container" class="container">
+
+<form>
+ <div class="form-group">
+    <label for="userName">UserName:</label>
+    <input type="text" class="form-control" name="userName" id="userName">
+  </div>
+    <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" id="password">
+  </div>
+   <div class="form-group">
+    <label for="firstName">FirstName:</label>
+    <input type="text" class="form-control" name="firstName" id="firstName">
+  </div>
+     <div class="form-group">
+    <label for="lastName">LastName:</label>
+    <input type="text" class="form-control" name="lastName" id="lastName">
+  </div>
+       <div class="form-group">
+    <label for="phone">Phone Number:</label>
+    <input type="text" class="form-control" name="phone" id="phone">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" name="email" id="email">
+  </div>
+     <div class="form-group">
+    <label for="userLocation">Location:</label>
+    <input type="text" class="form-control" name="userLocation" id="userLocation">
+  </div>
+  <button id="createUser"  class="btn btn-default">Create User</button>
+ </form>
+ </div>
+
+	<script>
+$("#createUser").click(function() {
+var jxhr = $.post("create", {
+userName: $("#userName").val(),
+password: $("#password").val(), 
+firstName: $("#firstName").val(),
+lastName: $("#lastName").val(),
+phone: $("#phone").val(),
+email: $("#email").val(),
+userLocation: $("#userLocation").val()}).done(function(result){
+var myObj = jQuery.parseJSON(result);
+var outputString = "The following user has been added <br>";
+    	outputString+="<br>"+myObj.userName+"<br>";
+		outputString+="<br>"+myObj.password+"<br>";
+    	outputString+="<br>"+myObj.firstName+"<br>";
+	    outputString+="<br>"+myObj.lastName+"<br>";
+	    outputString+="<br>"+myObj.phone+"<br>";
+		outputString+="<br>"+myObj.email+"<br>";
+		outputString+="<br>"+myObj.userLocation+"<br>";
+    	$('#container').html(outputString);
+ });
+});
+
+</script>
     </body>
 </html>

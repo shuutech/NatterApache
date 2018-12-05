@@ -28,6 +28,7 @@ padding: 35px;
 
 }
 
+
 .room{
 margin: 40px;
 }
@@ -35,4 +36,74 @@ margin: 40px;
 .bio:hover {
 background-color: red;
 color: white;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+*{
+	margin=0;
+}
+.result{
+	display:flex;
+	flex-wrap: wrap;
+}
+.friend {
+	height:20%;
+	width: 100.00%;
+	border: 1px solid black;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+/* For Phones
+
+@media only screen and (min-width: 400px){
+	.card{
+		width=50%;
+	}
+}
+*/
+/* For Tablets
+*/
+@media only screen and (min-width: 600px){
+	.friend{
+		width:50%;
+	}
+}
+/*For desktop
+*/
+@media only screen and (min-width: 768px){
+	.friend{
+		width:33.33%;
+	}
 }
